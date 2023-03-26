@@ -130,6 +130,11 @@
     height: 80px;
 }
 
+.container .options .list-options a{
+    color: #000000;
+    text-decoration: none;
+}
+
 .container .alert-success {
     width: 400px;
     height: 60px;

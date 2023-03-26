@@ -39,4 +39,11 @@ public class AgendaController {
         return mav;
     }
 
+    @GetMapping("/lista")
+    public ModelAndView obtenerContactos() {
+        ModelAndView mav = new ModelAndView("listaContactos");
+        mav.addObject("listaPersonas", agendaService.getPersonas());
+        return mav;
+    }
+
 }

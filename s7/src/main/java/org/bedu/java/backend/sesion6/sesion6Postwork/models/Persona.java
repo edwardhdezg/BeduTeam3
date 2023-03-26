@@ -83,4 +83,10 @@ public class Persona implements Comparable<Persona> {
     public int compareTo(Persona o) {
         return this.nombre.compareTo(o.nombre);
     }
+
+    public void resetInfo() {
+        this.nombre = "";
+        this.telefono = "";
+        this.email = "";
+    }
 }

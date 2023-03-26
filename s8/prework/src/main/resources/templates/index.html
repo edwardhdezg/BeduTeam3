@@ -31,14 +31,14 @@
         <div class="options">
             <h3>Opciones</h3>
             <div class="list-options">
-                <a class="option-item" th:href="@{/lista}">
+                <a class="option-item" th:if="${listaPersonas.size() > 0}" th:href="@{/lista}">
                     <img src="https://www.pngmart.com/files/21/Agenda-PNG-HD.png" alt="agenda de contactos icon">
                     Ver lista
                 </a>
-                <a class="option-item">
-                    <img src="https://e7.pngegg.com/pngimages/413/180/png-clipart-computer-icons-team-team-miscellaneous-silhouette.png" alt="Icono equipo 03">
-                    Acerca de nosotros
-                </a>
+<!--                <a class="option-item">-->
+<!--                    <img src="https://e7.pngegg.com/pngimages/413/180/png-clipart-computer-icons-team-team-miscellaneous-silhouette.png" alt="Icono equipo 03">-->
+<!--                    Acerca de nosotros-->
+<!--                </a>-->
             </div>
         </div>
     </div>

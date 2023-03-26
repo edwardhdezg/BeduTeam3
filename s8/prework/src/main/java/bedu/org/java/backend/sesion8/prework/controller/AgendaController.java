@@ -32,10 +32,16 @@ public class AgendaController {
 
     @PostMapping("/registro")
     public ModelAndView registra(@Valid Persona persona, Errors errors) {
-        if(!errors.hasErrors()) {
-            agendaService.guardaPersona(persona);
-        }
         ModelAndView mav = new ModelAndView("index");
+        if(!errors.hasErrors()) {
+            try {
+                agendaService.guardaPersona(persona);
+                mav.addObject("registro", true);
+            }catch (Exception e){
+                mav.addObject("validacionTelefono", true);
+            }
+
+        }
         mav.addObject("listaPersonas", agendaService.getPersonas());
         return mav;
     }

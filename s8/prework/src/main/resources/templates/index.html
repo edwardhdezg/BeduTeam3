@@ -16,12 +16,13 @@
             <div class="formGroup">
                 <label for="name">Ingresa tu nombre completo</label>
                 <input id="name" type="text" th:field="*{nombre}">
-                <span th:if="${#fields.hasErrors('nombre')}" th:errorclass="error" th:errors="*{nombre}"></span>
+                <span class="error" th:if="${#fields.hasErrors('nombre') }" th:errorclass="error" th:errors="*{nombre}" ></span>
             </div>
             <div class="formGroup">
                 <label for="tel">Ingresa tu telefono</label>
                 <input id="tel" type="tel" th:field="*{telefono}">
-                <span th:if="${#fields.hasErrors('telefono')}" th:errorclass="error" th:errors="*{telefono}"></span>
+                <span  class="error" th:if="${#fields.hasErrors('telefono')}" th:errorclass="error" th:errors="*{telefono}"></span>
+                <span  class="error" th:if="${validacionTelefono == true }">El telefono ya se encuentra registrado</span>
             </div>
             <div class="formGroup buttons">
                 <button type="submit">Agregar nuevo</button>

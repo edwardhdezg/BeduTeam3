@@ -56,6 +56,11 @@ public class Persona implements Comparable<Persona> {
         return nombre.equals(persona.nombre);
     }
 
+    public void resetInput(){
+        this.nombre="";
+        this.telefono="";
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(nombre);

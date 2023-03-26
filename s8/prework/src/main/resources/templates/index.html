@@ -9,7 +9,7 @@
 <div class="container">
     <h2 class="title">Introduce un nuevo registro</h2>
     <div class="register-content">
-        <form th:action="@{/registro}" th:object="${persona}" method="post">
+        <form id="formulario" th:action="@{/registro}" th:object="${persona}" method="post">
             <div class="block-img">
                 <img th:src="@{/img/agendaIcon.png}" alt="Icono de agenda">
             </div>
@@ -49,5 +49,7 @@
     <!--            <li th:each="registro : ${listaPersonas}" th:text="${ registro.getNombre() + ' ' + registro.getTelefono()}"  ></li>-->
     <!--        </ul>-->
 </div>
+
+
 </body>
 </html>

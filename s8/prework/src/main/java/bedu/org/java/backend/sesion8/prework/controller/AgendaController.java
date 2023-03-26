@@ -36,6 +36,7 @@ public class AgendaController {
         if(!errors.hasErrors()) {
             try {
                 agendaService.guardaPersona(persona);
+                persona.resetInput();
                 mav.addObject("registro", true);
             }catch (Exception e){
                 mav.addObject("validacionTelefono", true);

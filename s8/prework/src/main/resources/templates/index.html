@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro agenda de contactos</title>
+    <link rel="stylesheet"  type="text/css" th:href="@{/css/registro.css}" />
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Introduce un nuevo registro</h2>
+        <div class="register-content">
+            <form th:action="@{/registro}" th:object="${persona}" method="post">
+            <div class="block-img">
+                <img th:src="@{/img/agendaIcon.png}" alt="Icono de agenda">
+            </div>
+            <div class="formGroup">
+                <label for="name">Ingresa tu nombre completo</label>
+                <input id="name" type="text" th:field="*{nombre}">
+                <span th:if="${#fields.hasErrors('nombre')}" th:errorclass="error" th:errors="*{nombre}"></span>
+            </div>
+            <div class="formGroup">
+                <label for="tel">Ingresa tu telefono</label>
+                <input id="tel" type="tel" th:field="*{telefono}">
+                <span th:if="${#fields.hasErrors('telefono')}" th:errorclass="error" th:errors="*{telefono}"></span>
+            </div>
+            <div class="formGroup">
+                <label for="email">Ingresa tu Email</label>
+                <input id="email" type="email" th:field="*{email}">
+                <span th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}"></span>
+            </div>
+            <div class="formGroup buttons">
+                <button type="submit">Agregar nuevo</button>
+<!--                <a class="btn" href="@{/listaAgenda}">Ver lista de contactos</a>-->
+            </div>
+        </form>
+            <div class="options">
+                <h3>Opciones</h3>
+                <div class="list-options">
+                    <a class="option-item" th:href="@{/lista}">
+                        <img src="https://www.pngmart.com/files/21/Agenda-PNG-HD.png" alt="agenda de contactos icon">
+                        Ver lista
+                    </a>
+                    <a class="option-item">
+                        <img src="https://e7.pngegg.com/pngimages/413/180/png-clipart-computer-icons-team-team-miscellaneous-silhouette.png" alt="Icono equipo 03">
+                        Acerca de nosotros
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert-success" th:if="${registro == true}">El usuario se ha registrado correctamente en su agenda</div>
+<!--        <ul>-->
+<!--            <li th:each="registro : ${listaPersonas}" th:text="${ registro.getNombre() + ' ' + registro.getTelefono()}"  ></li>-->
+<!--        </ul>-->
+    </div>
+</body>
+</html>
